@@ -11,14 +11,16 @@ $(function(){
             var weight = parseFloat($('#input_weight').val());
             var height = parseFloat($('#input_height').val());
             var ans = weight/(height*height)
-            ans = ans.toFixed(1)
+            weight = weight.toFixed(2)
+            height = height.toFixed(2)
+            ans = ans.toFixed(2)
             var ideal_weight_min = (height*height)*18.5
             ideal_weight_min = ideal_weight_min.toFixed(2)
             var ideal_weight_max = (height*height)*24.9
             ideal_weight_max = ideal_weight_max.toFixed(2)
 
             var imc = 'Seu IMC é ' + String(ans)
-            var ideal_weigth_interval = String(ideal_weight_min) + " Kg <= Seu peso ideal >= " + String(ideal_weight_max) + " Kg"
+            var ideal_weigth_interval = String(ideal_weight_min) + " Kg <= Seu peso ideal <= " + String(ideal_weight_max) + " Kg"
             if(ans<18.5){
                 result = 'Está abaixo do peso'
                 $('#div_result').css('background-color', 'rgb(150,0,0)')
@@ -45,9 +47,14 @@ $(function(){
                 result = 'Está obeso'
                 $('#div_result').css('background-color', 'rgb(255,0,0)')
             }
-            $('#div_imc').text(imc)
-            $('#div_result').text(result)
-            $('#div_ideal_weight').text(ideal_weigth_interval)
+            $('form').css('display','none')
+            $('#weight').text("Peso: " + weight)
+            $('#height').text("Altura: " + height)
+            $('#div_datas').css('display', 'block')
+            $('#div_imc').text(imc).css('display', 'block')
+            $('#div_result').text(result).css('display', 'block')
+            $('#div_ideal_weight').text(ideal_weigth_interval).css('display', 'block')
+            $('#input_back').css('display','block')
         }
         else{
             if($('#input_weight').val() <= 0){
@@ -59,5 +66,11 @@ $(function(){
             }
         }
 
+        })
+        $('#input_back').click(function(){
+            $('#input_back').css('display','none')
+            $('._div_information').css('display', 'none')
+            $('form').css('display','block')
+            
         })
 })
