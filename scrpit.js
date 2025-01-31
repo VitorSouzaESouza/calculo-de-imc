@@ -48,8 +48,8 @@ $(function(){
                 $('#div_result').css('background-color', 'rgb(255,0,0)')
             }
             $('form').css('display','none')
-            $('#weight').text("Peso: " + weight)
-            $('#height').text("Altura: " + height)
+            $('#weight').text("Peso: " + weight + " Kg")
+            $('#height').text("Altura: " + height + " m")
             $('#div_datas').css('display', 'block')
             $('#div_imc').text(imc).css('display', 'block')
             $('#div_result').text(result).css('display', 'block')
