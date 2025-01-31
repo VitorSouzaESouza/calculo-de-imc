@@ -26,15 +26,24 @@ h2{
     font: normal 20px Verdana;
     margin-bottom: 30px;
 }
-#div_result{
-    width: 33%;
+._div_information{
+    width: 50%;
     color: white;
     border-radius: 100px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+}
+#div_imc{
+    background-color: rgb(80,80,80);
+}
+#div_result{
+    background-color: rgb(172, 182, 81);
+}
+#div_ideal_weight{
+    background-color: rgb(168, 116, 47);
 }
 form{
-    width: 33%;
+    width: 50%;
     border-radius: 10px;
     background-color: rgb(226, 226, 226);
     padding: 10px;
